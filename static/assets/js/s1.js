@@ -63,13 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
       pChange(selectedOption);
     });
 
-    const storedP = localStorage.getItem("uv");
-    if (storedP === "true") {
-      pChangeElement.value = "uv";
-    } else if (localStorage.getItem("dy") === "true" || localStorage.getItem("dy") === "auto") {
+    const storedP = localStorage.getItem("dy");
+    if (storedDy === "true" || storedDy === "auto") {
       pChangeElement.value = "dy";
-    } else {
+    } else if (localStorage.getItem("uv") === "true") {
       pChangeElement.value = "uv";
+    } else {
+      pChangeElement.value = "dy";
     }
   }
 });
